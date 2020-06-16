@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Android_1.MyFirstProject</string>
+    <string name="app_name">Первый проект</string>
+    <string name="weather_title">+ 20 C</string>
+    <string name="city">Москва</string>
+
+
 </resources>
