@@ -1,7 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Первый проект</string>
-    <string name="weather_title">+ 20 C</string>
     <string name="city">Москва</string>
+    <string name="weatherCondition">Ясно</string>
+    <string name="realFeel">Ощущается как: +18 C</string>
+    <string name="numberOfDegrees">+21 C</string>
+    <string name="cityArea">Центральный округ</string>
+    <string name="windSpeed">5 м/c</string>
+    <string name="humidity">20%</string>
+    <string name="pressureText">752 мм. рт. ст.</string>
+    <string name="hourNow">Сейчас</string>
+    <string name="plus1hour">21:00</string>
+    <string name="hourPlus2">22:00</string>
+    <string name="hourPlus2Degree">+11</string>
+    <string name="hourNowDegree">+19</string>
+    <string name="plus1hourDegree">+18</string>
+    <string name="editTextChooseCity">Выберете город:</string>
 
 
 </resources>
