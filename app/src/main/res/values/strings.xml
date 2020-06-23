@@ -17,6 +17,19 @@
     <string name="hourNowDegree">+19</string>
     <string name="plus1hourDegree">+18</string>
     <string name="editTextChooseCity">Выберете город:</string>
+    <string name="acc_textView1">Выберете интересующий город:</string>
+    <string name="acc_inputCity">Название города</string>
+    <string name="acc_checkBox_windSpeed">Показывать скорость ветра</string>
+    <string name="acc_checkBox_pressure">Показывать давление</string>
+
+    <string-array name="cities_array">
+
+        <item>Москва</item>
+        <item>Лондон</item>
+        <item>Омск</item>
+        <item>Вашингтон</item>
+
+    </string-array>
 
 
 </resources>
