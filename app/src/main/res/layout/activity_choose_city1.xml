@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ChooseCityActivity1">
+
+
+        <Space
+            android:id="@+id/space1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/acc_textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/acc_textView1"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/space1"
+            />
+
+        <LinearLayout
+            android:id="@+id/linLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/acc_textView1"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:id="@+id/acc_inputCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="city_name"
+                android:ems="10"
+                android:hint="@string/acc_inputCity"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/OkButtonChooseCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OkButtonChooseCity" />
+        </LinearLayout>
+
+        <Space
+            android:id="@+id/space2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/linLayout"/>
+
+        <CheckBox
+            android:id="@+id/acc_checkBox_windSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/acc_checkBox_windSpeed"
+            app:layout_constraintTop_toBottomOf="@id/space2"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/acc_checkBox_pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/acc_checkBox_pressure"
+            app:layout_constraintTop_toBottomOf="@id/acc_checkBox_windSpeed"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
