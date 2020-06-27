@@ -21,6 +21,8 @@
     <string name="acc_inputCity">City name</string>
     <string name="acc_checkBox_windSpeed">Show wind speed</string>
     <string name="acc_checkBox_pressure">Show pressure</string>
+    <string name="choose_city_button">Choose city</string>
+    <string name="ok_button_choose_city">OK</string>
 
     <string-array name="cities_array">
 

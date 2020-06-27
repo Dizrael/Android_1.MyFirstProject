@@ -21,6 +21,8 @@
     <string name="acc_inputCity">Название города</string>
     <string name="acc_checkBox_windSpeed">Показывать скорость ветра</string>
     <string name="acc_checkBox_pressure">Показывать давление</string>
+    <string name="choose_city_button">Выбрать город</string>
+    <string name="ok_button_choose_city">OK</string>
 
     <string-array name="cities_array">
 

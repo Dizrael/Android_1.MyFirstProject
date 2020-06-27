@@ -1,15 +1,23 @@
 package ru.geekbrains.android_1myfirstproject;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 
 import java.lang.reflect.Array;
@@ -18,8 +26,8 @@ import ru.geekbrains.android_1myfirstproject.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    ActivityMainBinding binding;
     private static final String TAG = "myLogs";
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,71 +35,75 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this));
         setContentView(R.layout.activity_main);
 
-//        AutoCompleteTextView inputCityTextView = (AutoCompleteTextView) findViewById(R.id.acc_inputCity);
-//        String[] cities = getResources().getStringArray(R.array.cities_array);
-//        ArrayAdapter<String> adapter =
-//                new ArrayAdapter<String>(this, R.layout.activity_choose_city, R.id.acc_inputCity, cities);
-//        inputCityTextView.setAdapter(adapter);
+        Loging("onCreate()");
 
-        String instanceState;
-        if (savedInstanceState == null) instanceState = "Первый запуск ";
-        else instanceState = "Повторный запуск ";
-
-        Toast.makeText(getApplicationContext(), instanceState + "- onCreate()", Toast.LENGTH_SHORT).show();
+        initButtonListener();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Toast.makeText(getApplicationContext(), "onStart()", Toast.LENGTH_SHORT).show();
-        Log.d(TAG,"onStart()");
+        Loging("onStart()");
+    }
+
+    private void initButtonListener() {
+        ((Button)findViewById(R.id.chooseCityButton)).setOnClickListener((view) -> {
+            Intent intentTo2ndScreen = new Intent(this, ChooseCityActivity1.class);
+            startActivityForResult(intentTo2ndScreen, Constants.REQ_CODE_CITY);
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Loging("onActivityResult");
+
+        if (resultCode == Activity.RESULT_OK && requestCode == Constants.REQ_CODE_CITY && data != null) {
+            Loging("Are you here?");
+            androidx.appcompat.widget.Toolbar myMainToolbar = (androidx.appcompat.widget.Toolbar)findViewById(R.id.mainToolbar);
+            myMainToolbar.setTitle(data.getStringExtra(Constants.CITY_NAME_AGR));
+        }
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(getApplicationContext(), "onResume()", Toast.LENGTH_SHORT).show();
-        Log.d(TAG,"onResume()");
+        Loging("onResume()");
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Toast.makeText(getApplicationContext(), "Повторный запуск! - onRestoreInstanceState()", Toast.LENGTH_SHORT).show();
-        Log.d(TAG,"Повторный запуск! - onRestoreInstanceState()");
+        Loging("Повторный запуск! - onRestoreInstanceState()");
     }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle saveInstanceState) {
         super.onSaveInstanceState(saveInstanceState);
-        Toast.makeText(getApplicationContext(), "onSaveInstanceState()", Toast.LENGTH_SHORT).show();
-        Log.d(TAG,"onSaveInstanceState()");
-
-        EditText yourFeelings = (EditText) findViewById(R.id.editTextTextPersonName);
-        String saveDataFeelings = yourFeelings.getText().toString();
-
-        saveInstanceState.putString("string",saveDataFeelings);
+        Loging("onSaveInstanceState()");
     }
-
 
     @Override
     protected void onPause() {
         super.onPause();
-        Toast.makeText(getApplicationContext(), "onPause()", Toast.LENGTH_SHORT).show();
-        Log.d(TAG,"onPause()");
+        Loging("onPause()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(getApplicationContext(), "onStop()", Toast.LENGTH_SHORT).show();
-        Log.d(TAG,"onStop()");
+        Loging("onStop()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
-        Log.d(TAG,"onDestroy()");
+        Loging("onDestroy()");
+    }
+
+    protected void Loging(String log) {
+        Toast.makeText(getApplicationContext(), log, Toast.LENGTH_SHORT).show();
+        Log.d(TAG, log);
     }
 }
