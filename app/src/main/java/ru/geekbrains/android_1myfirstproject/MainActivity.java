@@ -27,7 +27,7 @@ import ru.geekbrains.android_1myfirstproject.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "myLogs";
-    protected ActivityMainBinding binding;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -44,10 +44,10 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/OkButtonChooseCity"
+                android:id="@+id/okButtonChooseCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/OkButtonChooseCity" />
+                android:text="@string/ok_button_choose_city" />
         </LinearLayout>
 
         <Space

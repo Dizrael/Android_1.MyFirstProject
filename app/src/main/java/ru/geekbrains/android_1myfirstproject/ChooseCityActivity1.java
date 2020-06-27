@@ -13,7 +13,7 @@ import ru.geekbrains.android_1myfirstproject.databinding.ActivityChooseCity1Bind
 
 public class ChooseCityActivity1 extends AppCompatActivity {
 
-    protected ActivityChooseCity1Binding binding;
+    private ActivityChooseCity1Binding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class ChooseCityActivity1 extends AppCompatActivity {
     }
 
     private void initButtonListener(AutoCompleteTextView inputCityTextView) {
-        ((Button)findViewById(R.id.OkButtonChooseCity)).setOnClickListener((view) -> {
+        ((Button)findViewById(R.id.okButtonChooseCity)).setOnClickListener((view) -> {
             String cityName = inputCityTextView.getText().toString();
 
             Intent intentTo1ndScreen = new Intent();
