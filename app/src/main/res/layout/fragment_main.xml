@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/everyDayVerScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/mainToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:subtitle="@string/cityArea"
+                    app:title="@string/city" />
+
+                <LinearLayout
+                    android:id="@+id/topLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/numberOfDegrees"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/numberOfDegrees"
+                        android:textSize="30sp" />
+
+                    <ImageView
+                        android:id="@+id/weatherIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_app_sunny_weather_24"
+                        tools:ignore="ContentDescription" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/weatherCondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/weatherCondition"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/realFeel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/realFeel"
+                    android:textSize="15sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <HorizontalScrollView
+                    android:id="@+id/everyHourHorisScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/icon_wind_speed_black"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageView
+                                android:id="@+id/imageView6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/icon_barometr"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/icon_drop"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/windSpeedText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/windSpeed" />
+
+                            <TextView
+                                android:id="@+id/pressureText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/pressureText" />
+
+                            <TextView
+                                android:id="@+id/humidity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/humidity" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/hourNow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/hourNow" />
+
+
+                            <ImageView
+                                android:id="@+id/hourNowIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_app_sunny_weather_24"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/hourNowDegree"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="@string/hourNowDegree" />
+
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/plus1hour"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/plus1hour" />
+
+                            <ImageView
+                                android:id="@+id/plus1hourIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/icon_cloudy_grey"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/plus1hourDegree"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/plus1hourDegree" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/hourPlus2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/hourPlus2" />
+
+
+                            <ImageView
+                                android:id="@+id/hourPlus2Icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_icon_rainy"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/hourPlus2Degree"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="@string/hourPlus2Degree" />
+
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/chooseCityButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/choose_city_button" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
