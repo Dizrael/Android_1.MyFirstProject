@@ -1,9 +1,11 @@
-package ru.geekbrains.android_1myfirstproject;
+package ru.geekbrains.android_1myfirstproject.activities;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import ru.geekbrains.android_1myfirstproject.R;
 
 public class ChooseCityActivity extends AppCompatActivity {
     @Override

@@ -1,4 +1,4 @@
-package ru.geekbrains.android_1myfirstproject;
+package ru.geekbrains.android_1myfirstproject.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import ru.geekbrains.android_1myfirstproject.Parcel;
+import ru.geekbrains.android_1myfirstproject.R;
 import ru.geekbrains.android_1myfirstproject.databinding.FragmentChooseCityBinding;
 
 public class ChooseCityFragment extends Fragment {

@@ -1,4 +1,4 @@
-package ru.geekbrains.android_1myfirstproject;
+package ru.geekbrains.android_1myfirstproject.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +22,7 @@ import android.widget.Toolbar;
 
 import java.lang.reflect.Array;
 
+import ru.geekbrains.android_1myfirstproject.R;
 import ru.geekbrains.android_1myfirstproject.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
