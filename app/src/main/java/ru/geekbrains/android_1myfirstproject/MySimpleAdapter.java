@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MySimpleAdapter extends RecyclerView.Adapter<MySimpleAdapter.SimpleViewHolder> {
 
-    public ArrayList<WeatherData> dataList = new ArrayList<>();
+    private ArrayList<WeatherData> dataList = new ArrayList<>();
 
     public void setData(List<WeatherData> list){
         dataList.clear();

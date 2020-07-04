@@ -47,7 +47,7 @@ public class MainFragment extends Fragment {
         MySimpleAdapter adapter = new MySimpleAdapter();
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerView.setAdapter(adapter);
-        binding.recyclerView.addItemDecoration(new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL));
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
         adapter.setData(dataList);
     }
 
