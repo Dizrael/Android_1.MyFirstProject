@@ -1,4 +1,4 @@
-package ru.geekbrains.android_1myfirstproject;
+package ru.geekbrains.android_1myfirstproject.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import ru.geekbrains.android_1myfirstproject.Constants;
+import ru.geekbrains.android_1myfirstproject.MySimpleAdapter;
+import ru.geekbrains.android_1myfirstproject.Parcel;
+import ru.geekbrains.android_1myfirstproject.R;
+import ru.geekbrains.android_1myfirstproject.WeatherData;
+import ru.geekbrains.android_1myfirstproject.activities.ChooseCityActivity;
 import ru.geekbrains.android_1myfirstproject.databinding.FragmentMainBinding;
 
 public class MainFragment extends Fragment {
@@ -28,12 +40,33 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        List<WeatherData> dataList = initDataList();
+
+
+        MySimpleAdapter adapter = new MySimpleAdapter();
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL));
+        adapter.setData(dataList);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initButtonListener();
+    }
+
+    private List<WeatherData> initDataList() {
+        List<WeatherData> dataList = new ArrayList<>();
+        String[] days;
+        String[] temp;
+        days = getResources().getStringArray(R.array.days);
+        temp = getResources().getStringArray(R.array.temp);
+        for (int i = 0; i < days.length; i++) {
+            dataList.add(new WeatherData(days[i], temp[i]));
+        }
+        return dataList;
     }
 
     @Override

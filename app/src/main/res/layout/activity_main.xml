@@ -6,13 +6,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
 
         <fragment
             android:id="@+id/mainscreen_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="ru.geekbrains.android_1myfirstproject.MainFragment"/>
+            android:name="ru.geekbrains.android_1myfirstproject.fragments.MainFragment"/>
 
 
 
