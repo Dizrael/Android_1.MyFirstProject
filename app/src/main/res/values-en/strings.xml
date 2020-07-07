@@ -23,6 +23,9 @@
     <string name="acc_checkBox_pressure">Show pressure</string>
     <string name="choose_city_button">Choose city</string>
     <string name="ok_button_choose_city">OK</string>
+    <string name="snackbar_action_text">Accept</string>
+    <string name="snackbar__text">Accepting your choice?</string>
+
 
     <string-array name="cities_array">
 

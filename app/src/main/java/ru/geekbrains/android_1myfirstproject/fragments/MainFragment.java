@@ -3,6 +3,7 @@ package ru.geekbrains.android_1myfirstproject.fragments;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import ru.geekbrains.android_1myfirstproject.Constants;
 import ru.geekbrains.android_1myfirstproject.MySimpleAdapter;

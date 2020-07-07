@@ -23,6 +23,9 @@
     <string name="acc_checkBox_pressure">Показывать давление</string>
     <string name="choose_city_button">Выбрать город</string>
     <string name="ok_button_choose_city">OK</string>
+    <string name="snackbar_action_text">Подтверждаю</string>
+    <string name="snackbar__text">Подтверждаете выбор?</string>
+
 
     <string-array name="cities_array">
 
