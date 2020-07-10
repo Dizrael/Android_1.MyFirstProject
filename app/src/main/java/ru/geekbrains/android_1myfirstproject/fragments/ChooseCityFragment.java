@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import ru.geekbrains.android_1myfirstproject.Parcel;
 import ru.geekbrains.android_1myfirstproject.R;
 import ru.geekbrains.android_1myfirstproject.databinding.FragmentChooseCityBinding;
@@ -38,7 +40,7 @@ public class ChooseCityFragment extends Fragment {
     }
 
     private AutoCompleteTextView setAutoCompleteTextView() {
-        if (getActivity() != null){
+        if (getActivity() != null) {
             AutoCompleteTextView inputCityTextView = binding.accInputCity;
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                     R.array.cities_array, android.R.layout.simple_spinner_item);
@@ -50,15 +52,17 @@ public class ChooseCityFragment extends Fragment {
     }
 
     private void initButtonListener(AutoCompleteTextView inputCityTextView) {
-        if (getActivity() != null){
+        if (getActivity() != null) {
             binding.okButtonChooseCity.setOnClickListener((view) -> {
                 Parcel currentParcel = new Parcel(inputCityTextView.getText().toString());
 
-                Intent intentTo1ndScreen = new Intent();
-                intentTo1ndScreen.putExtra(PARCEL, currentParcel);
-                getActivity().setResult(Activity.RESULT_OK, intentTo1ndScreen);
-                getActivity().finish();
-
+                Snackbar.make(requireView(), R.string.snackbar__text, Snackbar.LENGTH_LONG)
+                        .setAction(R.string.snackbar_action_text, view1 -> {
+                            Intent intentTo1ndScreen = new Intent();
+                            intentTo1ndScreen.putExtra(PARCEL, currentParcel);
+                            getActivity().setResult(Activity.RESULT_OK, intentTo1ndScreen);
+                            getActivity().finish();
+                        }).show();
             });
         }
     }

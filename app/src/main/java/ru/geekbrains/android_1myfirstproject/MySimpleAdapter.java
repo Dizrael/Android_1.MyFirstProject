@@ -1,5 +1,6 @@
 package ru.geekbrains.android_1myfirstproject;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +53,13 @@ public class MySimpleAdapter extends RecyclerView.Adapter<MySimpleAdapter.Simple
         public void bind(WeatherData item){
             tvDay.setText(item.day);
             tvTemp.setText(String.valueOf(item.temp));
+
+            int position = getAdapterPosition() % 2;
+            if (position == 0){
+                itemView.setBackgroundColor(Color.GRAY);
+            }else{
+                itemView.setBackgroundColor(Color.YELLOW);
+            }
         }
     }
 
