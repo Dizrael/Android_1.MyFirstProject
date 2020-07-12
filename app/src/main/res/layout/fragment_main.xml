@@ -291,6 +291,40 @@
                     android:text="@string/choose_city_button"
                     />
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Тут будет температура"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/pressure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Тут будет давление"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/humidity1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Тут будет влажность"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/refreshButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cornerRadius="28dp"
+                    android:text="@string/refresh_button"
+                    />
+
+
             </LinearLayout>
         </ScrollView>
 

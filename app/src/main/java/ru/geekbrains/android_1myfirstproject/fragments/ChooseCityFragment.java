@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import ru.geekbrains.android_1myfirstproject.Parcel;
 import ru.geekbrains.android_1myfirstproject.R;
 import ru.geekbrains.android_1myfirstproject.databinding.FragmentChooseCityBinding;
@@ -54,7 +56,8 @@ public class ChooseCityFragment extends Fragment {
     private void initButtonListener(AutoCompleteTextView inputCityTextView) {
         if (getActivity() != null) {
             binding.okButtonChooseCity.setOnClickListener((view) -> {
-                Parcel currentParcel = new Parcel(inputCityTextView.getText().toString());
+                String city = inputCityTextView.getText().toString();
+                Parcel currentParcel = new Parcel(city);
 
                 Snackbar.make(requireView(), R.string.snackbar__text, Snackbar.LENGTH_LONG)
                         .setAction(R.string.snackbar_action_text, view1 -> {
@@ -63,7 +66,10 @@ public class ChooseCityFragment extends Fragment {
                             getActivity().setResult(Activity.RESULT_OK, intentTo1ndScreen);
                             getActivity().finish();
                         }).show();
+
+
             });
         }
     }
+
 }
