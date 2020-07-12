@@ -25,6 +25,7 @@
     <string name="ok_button_choose_city">OK</string>
     <string name="snackbar_action_text">Accept</string>
     <string name="snackbar__text">Accepting your choice?</string>
+    <string name="refresh_button">Refresh</string>
 
 
     <string-array name="cities_array">

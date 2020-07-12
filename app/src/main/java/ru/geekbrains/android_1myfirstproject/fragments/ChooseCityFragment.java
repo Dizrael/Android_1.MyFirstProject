@@ -59,7 +59,7 @@ public class ChooseCityFragment extends Fragment {
                 Snackbar.make(requireView(), R.string.snackbar__text, Snackbar.LENGTH_LONG)
                         .setAction(R.string.snackbar_action_text, view1 -> {
                             Intent intentTo1ndScreen = new Intent();
-                            intentTo1ndScreen.putExtra(PARCEL, currentParcel);
+                                intentTo1ndScreen.putExtra(PARCEL, currentParcel);
                             getActivity().setResult(Activity.RESULT_OK, intentTo1ndScreen);
                             getActivity().finish();
                         }).show();
